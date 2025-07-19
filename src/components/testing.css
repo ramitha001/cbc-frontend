@@ -1,0 +1,35 @@
+.background1{
+    
+    width: 250px;
+    height: 200px ;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.val{
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    color: azure;
+    border: none;
+    border-radius: 70%;
+    font-size: 60px;
+    cursor: pointer;
+}
+
+span{
+    font-size: 60px;
+}
+
+h1{
+    position: absolute;
+    top: 0;
+}
+
+.btnPannel{
+    position: absolute;
+    
+}
