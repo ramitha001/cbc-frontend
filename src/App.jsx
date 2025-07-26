@@ -6,6 +6,7 @@ import ProductCard from './components/productCard.jsx'
 import UserData from './components/UserData.jsx'
 import Testing from './components/testing.jsx'
 import LoginPage from './pages/loginPage.jsx'
+import SignInPage from './pages/signInPage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/homePage.jsx'
 
@@ -20,7 +21,7 @@ function App() {
       <Routes path="/*">
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/signup" element={<SignInPage />} />
+        <Route path="/signInPage" element={<SignInPage />} />
         <Route path="/*" element={<h1> 404 error </h1>} />
       </Routes>
      </BrowserRouter>
