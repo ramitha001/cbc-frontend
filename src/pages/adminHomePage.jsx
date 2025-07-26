@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { TfiBarChartAlt } from "react-icons/tfi";
+import { TfiFolder } from "react-icons/tfi";
+import { TfiLayoutColumn4Alt } from "react-icons/tfi";
+import { TfiCommentsSmiley } from "react-icons/tfi";
 
 export default function AdminHomePage(){
     return(
@@ -8,9 +11,9 @@ export default function AdminHomePage(){
             <div className="w-[20%] h-screen bg-blue-500 flex flex-col items-center">
                 
                 <Link className="flex flex-row items-center" to="/admin/dashboard"> <TfiBarChartAlt /> Dashboard  </Link>
-                <Link to="/admin/products"> Products  </Link>
-                <Link to="/admin/order"> Order  </Link>
-                <Link to="/admin/customers"> Customers  </Link>
+                <Link className="flex flex-row items-center" to="/admin/products"> <TfiFolder /> Products  </Link>
+                <Link className="flex flex-row items-center" to="/admin/order"> <TfiLayoutColumn4Alt /> Order  </Link>
+                <Link className="flex flex-row items-center" to="/admin/customers"> <TfiCommentsSmiley /> Customers  </Link>
                 
             </div>
 
