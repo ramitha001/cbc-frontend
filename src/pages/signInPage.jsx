@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./loginPage.css";
 import { Link } from "react-router-dom";
 
-export default function LoginPage() {
-  const [form, setForm] = useState({ email: "", password: "" });
+export default function SignInPage() {
+  const [form, setForm] = useState({ name: "", email: "", password: "" });
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -11,15 +11,26 @@ export default function LoginPage() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // Handle login logic here
-    alert(`Logged in as ${form.email}`);
+    // Handle sign-in logic here
+    alert(`Signed in as ${form.name}`);
   }
 
   return (
     <div className="login-container">
       <div className="login-card">
-        <h2 className="login-title">Login</h2>
+        <h2 className="login-title">Sign Up</h2>
         <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <input
+              className="login-input"
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <div className="input-group">
             <input
               className="login-input"
@@ -43,11 +54,11 @@ export default function LoginPage() {
             />
           </div>
           <button className="login-button" type="submit">
-            Login
+            Sign Up
           </button>
         </form>
         <p style={{ marginTop: "20px" }}>
-          Don't have an account? <Link to="/signInPage">Sign Up</Link>
+          Already have an account? <Link to="/login">Login</Link>
         </p>
       </div>
     </div>
