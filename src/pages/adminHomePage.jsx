@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from "react-router-dom";
 import { TfiBarChartAlt, TfiFolder, TfiLayoutColumn4Alt, TfiCommentsSmiley } from "react-icons/tfi";
+import AdminProductPage from "./admin/adminProductPage";
 
 export default function AdminHomePage() {
     return (
@@ -37,11 +38,12 @@ export default function AdminHomePage() {
             {/* Main Content */}
             <div className="w-[80%] h-screen bg-white p-10 overflow-y-auto">
                 <Routes>
-                    <Route path="/dashboard" element={<h1>Dashboard</h1>} />
-                    <Route path="/products" element={<h1>Products</h1>} />
-                    <Route path="/orders" element={<h1>Orders</h1>} />
-                    <Route path="/customers" element={<h1>Customers</h1>} />
-                    <Route path="/*" element={<h1>404 not found in Admin Page</h1>} />
+                    <Route index element={<h1>Welcome to Admin Panel</h1>} />
+                    <Route path="dashboard" element={<AdminProductPage />} />
+                    <Route path="products" element={<h1>Products</h1>} />
+                    <Route path="orders" element={<h1>Orders</h1>} />
+                    <Route path="customers" element={<h1>Customers</h1>} />
+                    <Route path="*" element={<h1>404 not found in Admin Page</h1>} />
                 </Routes>
             </div>
         </div>
