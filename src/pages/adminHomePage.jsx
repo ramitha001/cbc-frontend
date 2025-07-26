@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, Route, Routes } from "react-router-dom";
 import { TfiBarChartAlt } from "react-icons/tfi";
 import { TfiFolder } from "react-icons/tfi";
 import { TfiLayoutColumn4Alt } from "react-icons/tfi";
@@ -18,7 +18,15 @@ export default function AdminHomePage(){
             </div>
 
             <div className="w-[80%] h-screen bg-red-400">
+                <Routes path="/">
 
+                    <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+                    <Route path="/products" element={<h1>Products</h1>} />
+                    <Route path="/orders" element={<h1>Orders</h1>} />
+                    <Route path="/customers" element={<h1>Customers</h1>} />
+  
+
+                </Routes>
             </div>
             
         </div>
