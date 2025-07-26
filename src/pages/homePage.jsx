@@ -14,9 +14,9 @@ export default function HomePage() {
                     <a href="#features" className="nav-link">Features</a>
                     <a href="#about" className="nav-link">About</a>
                     <a href="#contact" className="nav-link">Contact</a>
-                    <Link to="/login" className="nav-link">login</Link>
+                    
                 </div>
-                <button className="nav-button">Get Started</button>
+                <Link className="nav-button" to="/login">Login</Link>
             </nav>
 
             {/* Hero Section */}
