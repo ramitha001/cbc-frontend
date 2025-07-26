@@ -22,7 +22,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signInPage" element={<SignInPage />} />
-        <Route path="/*" element={<h1> 404 error </h1>} />
+        <Route path="/*" element={<HomePage />} />
       </Routes>
      </BrowserRouter>
       
