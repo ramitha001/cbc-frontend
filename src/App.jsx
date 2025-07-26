@@ -9,6 +9,7 @@ import LoginPage from './pages/loginPage.jsx'
 import SignInPage from './pages/signInPage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import HomePage from './pages/homePage.jsx'
+import AdminHomePage from './pages/adminHomePage.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,6 +23,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signInPage" element={<SignInPage />} />
+        <Route path="/admin/*" element={<AdminHomePage />} />
         <Route path="/*" element={<HomePage />} />
       </Routes>
      </BrowserRouter>
