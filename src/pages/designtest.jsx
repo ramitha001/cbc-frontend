@@ -24,6 +24,8 @@ export default function DesignTest(){
 
                 if(res.data.user.type == "admin"){
                     window.location.href = "/admin"
+                }else{
+                    window.location.href = "/"
                 }
             }
         )
