@@ -22,6 +22,8 @@ export default function DesignTest(){
                     return
                 }
 
+                toast.success("Login Sucess")
+
                 localStorage.setItem("token",res.data.token)
 
                 if(res.data.user.type == "admin"){
