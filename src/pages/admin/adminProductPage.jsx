@@ -1,6 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { FaTrash, FaPen, FaPlus } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function AdminProductPage (){
 
@@ -20,9 +21,9 @@ export default function AdminProductPage (){
     
     return(
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative">
-            <button className="absolute top-6 right-22 z-20 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center text-2xl" title="Add Product">
+            <Link to = "admin/product/addProduct" className="absolute top-6 right-22 z-20 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center text-2xl " title="Add Product">
                 <FaPlus />
-            </button>
+            </Link>
             <div className="ml-64 pt-12 px-6"> {/* Adjust ml-64 if your sidebar is a different width */}
                 <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-8">
                     <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center drop-shadow-sm tracking-wide ">Admin Product Page</h1>
