@@ -5,6 +5,12 @@ export default function DesignTest(){
 
     const [email,setEmail] = useState("Your Email")
     const [password,setPassword] = useState("")
+
+
+    function login(){
+        console.log(email)
+    }
+
     return (
         <div className="flex justify-center items-center w-full h-screen bg-green-500">
 
@@ -22,7 +28,7 @@ export default function DesignTest(){
                     setPassword(e.target.value)
                 }} className="bg-white" />
 
-                <button className="bg-amber-300">Login</button>
+                <button onClick={login}  className="bg-amber-300 cursor-pointer">Login</button>
             </div>
                 
         </div>
