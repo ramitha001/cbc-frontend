@@ -1,28 +1,12 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { FaTrash, FaPen, FaPlus } from "react-icons/fa";
 
 export default function AdminProductPage (){
 
 
     const [product,setProduct] = useState([
-        {
-            "_id": "686f4dec974a7503e3e60ec2",
-            "productID": "B1002",
-            "productName": "Hydrating Glow Serum",
-            "altNames": [
-                "Face Serum",
-                "Glow Booster",
-                "Hydration Elixir"
-            ],
-            "images": [
-                "https://example.com/images/glow-serum-front.jpg",
-                "https://example.com/images/glow-serum-back.jpg"
-            ],
-            "price": 3490,
-            "lastPrice": "3990",
-            "description": "A lightweight, fast-absorbing serum enriched with hyaluronic acid and vitamin C to give your skin a radiant glow and deep hydration.",
-            "__v": 0
-        }
+       
     ])
 
     useEffect(()=>{
@@ -34,58 +18,52 @@ export default function AdminProductPage (){
 )
 
     
-        
-
-
-
-    
-
     return(
-        <div>
-                <h1>Admin Product page</h1>
-                <br />
-                <br />
-        
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Product ID</th>
-                            <th>Product Name</th>
-                            <th>Price</th>
-                            <th>Last Price</th>
-                            <th>Stock</th>
-                            <th>Description</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {product.map((product, index) => (
-                            <tr key={product._id}>
-                                <td>{product.productID}</td>
-                                <td>{product.productName}</td>
-                                <td>{product.price}</td>
-                                <td>{product.lastPrice}</td>
-                                <td>{product.stock }</td>
-                                <td>{product.description}</td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-                <br />
-
-
-                {
-                    product.map(
-                        (product,index)=>{
-                            return(
-                                <div key={product._id}>
-                                    {index}
-                                    {product.productName}
-                                </div>
-
-                            )
-                        }
-                    )
-                }
+        <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative">
+            <button className="absolute top-6 right-22 z-20 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center text-2xl" title="Add Product">
+                <FaPlus />
+            </button>
+            <div className="ml-64 pt-12 px-6"> {/* Adjust ml-64 if your sidebar is a different width */}
+                <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-2xl p-8">
+                    <h1 className="text-4xl font-extrabold text-blue-800 mb-8 text-center drop-shadow-sm tracking-wide ">Admin Product Page</h1>
+                    <br />
+                    <br />
+                    <br />
+                    <div className="overflow-x-auto">
+                        <table className="min-w-full rounded-xl overflow-hidden">
+                            <thead>
+                                <tr>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Product ID</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Product Name</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Price</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Last Price</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Stock</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Description</th>
+                                    <th className="px-6 py-4 bg-blue-600 text-white text-left text-base font-bold uppercase tracking-wider">Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {product.map((product, index) => (
+                                    <tr key={product._id} className="even:bg-blue-50 hover:bg-blue-100 transition-colors">
+                                        <td className="px-6 py-4 border-b border-blue-100 font-medium">{product.productID}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100">{product.productName}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100">{product.price}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100">{product.lastPrice}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100">{product.stock || "N/A"}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100 max-w-xs truncate" title={product.description}>{product.description}</td>
+                                        <td className="px-6 py-4 border-b border-blue-100">
+                                            <div className="flex gap-4 justify-center">
+                                                <button className="text-blue-600 hover:text-red-600 transition-colors text-xl" title="Delete"><FaTrash /></button>
+                                                <button className="text-blue-600 hover:text-green-600 transition-colors text-xl" title="Edit"><FaPen /></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

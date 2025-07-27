@@ -1,0 +1,84 @@
+/* Admin Product Page Styles */
+
+.admin-product-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+
+.admin-product-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 32px;
+  color: #2d3a4b;
+  letter-spacing: 1px;
+}
+
+.admin-product-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9fbfd;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.admin-product-table th, .admin-product-table td {
+  padding: 16px 12px;
+  text-align: left;
+}
+
+.admin-product-table th {
+  background: #e3eafc;
+  color: #1a237e;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #c5cae9;
+}
+
+.admin-product-table tr {
+  transition: background 0.2s;
+}
+
+.admin-product-table tbody tr:hover {
+  background: #f1f8ff;
+}
+
+.admin-product-table td {
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.admin-product-action {
+  display: flex;
+  gap: 12px;
+}
+
+.admin-product-action svg {
+  cursor: pointer;
+  color: #1976d2;
+  transition: color 0.2s, transform 0.2s;
+  font-size: 1.2rem;
+}
+
+.admin-product-action svg:hover {
+  color: #d32f2f;
+  transform: scale(1.15);
+}
+
+@media (max-width: 700px) {
+  .admin-product-container {
+    padding: 10px;
+  }
+  .admin-product-title {
+    font-size: 1.3rem;
+  }
+  .admin-product-table th, .admin-product-table td {
+    padding: 8px 4px;
+    font-size: 0.9rem;
+  }
+} 
