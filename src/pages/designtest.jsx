@@ -1,3 +1,4 @@
+import axios from "axios"
 import { useState } from "react"
 
 
@@ -8,7 +9,14 @@ export default function DesignTest(){
 
 
     function login(){
-        console.log(email)
+        axios.post("http://localhost:3000/users/login",{
+            email : email,
+            password : password
+        }).then(
+            (res) =>{
+                console.log(res)
+            }
+        )
     }
 
     return (
