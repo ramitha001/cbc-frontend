@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useState } from "react"
+import toast, { Toaster } from "react-hot-toast"
 
 
 export default function DesignTest(){
@@ -14,10 +15,10 @@ export default function DesignTest(){
             password : password
         }).then(
             (res) =>{
-                console.log(res)
+                
 
                 if(res.data.user == null){
-                    alert(res.data.message)
+                    toast.error(res.data.message)
                     return
                 }
 
