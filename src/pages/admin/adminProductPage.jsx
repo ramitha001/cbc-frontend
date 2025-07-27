@@ -58,30 +58,16 @@ export default function AdminProductPage (){
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1234</td>
-                            <td>Face Cream</td>
-                            <td>99.00</td>
-                            <td>95.00</td>
-                            <td>19</td>
-                            <td>Whighting Beauty Cream</td>
-                        </tr>
-                        <tr>
-                            <td>2323</td>
-                            <td>Freagance</td>
-                            <td>120.00</td>
-                            <td>115.00</td>
-                            <td>9</td>
-                            <td>Rose Freagance</td>
-                        </tr>
-                        <tr>
-                            <td>1234</td>
-                            <td>Face Cream</td>
-                            <td>99.00</td>
-                            <td>95.00</td>
-                            <td>19</td>
-                            <td>Whighting Beauty Cream</td>
-                        </tr>
+                        {product.map((product, index) => (
+                            <tr key={product._id}>
+                                <td>{product.productID}</td>
+                                <td>{product.productName}</td>
+                                <td>{product.price}</td>
+                                <td>{product.lastPrice}</td>
+                                <td>{product.stock }</td>
+                                <td>{product.description}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
                 <br />
