@@ -14,11 +14,13 @@ export default function DesignTest(){
 
                 <span>Email</span>
                 <input defaultValue={email} onChange={(e)=>{
-                    console.log("email is changed")
+                    setEmail(e.target.value)
                 }} className="bg-white" />
 
                 <span>Password</span>
-                <input type="password" defaultValue={password} className="bg-white" />
+                <input type="password" defaultValue={password} onChange={(e)=>{
+                    setPassword(e.target.value)
+                }} className="bg-white" />
 
                 <button className="bg-amber-300">Login</button>
             </div>
