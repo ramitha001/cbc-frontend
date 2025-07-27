@@ -13,6 +13,18 @@ export default function AddProductForm(){
     const [description, setDescription] = useState("");
 
 
+    function handleSubmit(){
+        console.log({
+            productID,
+            productName,
+            altNames,
+            imageUrl,
+            price,
+            lastPrice,
+            stock,
+            description
+        })
+    }
 
 
     return(
