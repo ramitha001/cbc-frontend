@@ -8,9 +8,9 @@ export default function DesignTest(){
 
                 <img src="/mainlogo.jpg" className="rounded-full w-[100px]" />
                 <span>Email</span>
-                <input />
+                <input className="bg-white" />
                 <span>Password</span>
-                <input type="password" />
+                <input type="password" className="bg-white" />
             </div>
                 
         </div>
