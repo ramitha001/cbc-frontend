@@ -21,7 +21,7 @@ export default function AdminProductPage (){
     
     return(
         <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white relative">
-            <Link to = "admin/product/addProduct" className="absolute top-6 right-22 z-20 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center text-2xl " title="Add Product">
+            <Link to = "/admin/product/addProduct" className="absolute top-6 right-22 z-20 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition flex items-center justify-center text-2xl " title="Add Product">
                 <FaPlus />
             </Link>
             <div className="ml-64 pt-12 px-6"> {/* Adjust ml-64 if your sidebar is a different width */}
