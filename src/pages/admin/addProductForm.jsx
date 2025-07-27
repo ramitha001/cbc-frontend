@@ -66,7 +66,7 @@ export default function AddProductForm(){
                         <label className="block text-amber-800 font-semibold mb-1">Description</label>
                         <textarea className="w-full px-4 py-2 rounded-lg border border-amber-200 bg-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-400 resize-none min-h-[80px]" value={description} onChange={(e)=>{setDescription(e.target.value)}} />
                     </div>
-                    <button type="submit" className="w-full py-3 mt-4 bg-amber-400 hover:bg-amber-500 text-white font-bold rounded-lg shadow-lg transition">Add Product</button>
+                    <button type="submit" className="w-full py-3 mt-4 bg-amber-400 hover:bg-amber-500 text-white font-bold rounded-lg shadow-lg transition" onClick={handleSubmit}>Add Product</button>
                 </form>
             </div>
         </div>
