@@ -11,6 +11,8 @@ export default function DesignTest(){
                 <input className="bg-white" />
                 <span>Password</span>
                 <input type="password" className="bg-white" />
+
+                <button className="bg-amber-300">Login</button>
             </div>
                 
         </div>
