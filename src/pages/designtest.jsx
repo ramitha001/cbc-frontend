@@ -17,6 +17,7 @@ export default function DesignTest(){
                 console.log(res)
 
                 if(res.data.user == null){
+                    alert(res.data.message)
                     return
                 }
 
