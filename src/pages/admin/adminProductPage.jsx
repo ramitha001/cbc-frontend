@@ -43,6 +43,50 @@ export default function AdminProductPage (){
     return(
         <div>
                 <h1>Admin Product page</h1>
+                <br />
+                <br />
+        
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product ID</th>
+                            <th>Product Name</th>
+                            <th>Price</th>
+                            <th>Last Price</th>
+                            <th>Stock</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1234</td>
+                            <td>Face Cream</td>
+                            <td>99.00</td>
+                            <td>95.00</td>
+                            <td>19</td>
+                            <td>Whighting Beauty Cream</td>
+                        </tr>
+                        <tr>
+                            <td>2323</td>
+                            <td>Freagance</td>
+                            <td>120.00</td>
+                            <td>115.00</td>
+                            <td>9</td>
+                            <td>Rose Freagance</td>
+                        </tr>
+                        <tr>
+                            <td>1234</td>
+                            <td>Face Cream</td>
+                            <td>99.00</td>
+                            <td>95.00</td>
+                            <td>19</td>
+                            <td>Whighting Beauty Cream</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br />
+
+
                 {
                     product.map(
                         (product,index)=>{
