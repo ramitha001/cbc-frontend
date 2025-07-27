@@ -13,7 +13,9 @@ export default function DesignTest(){
                 <img src="/mainlogo.jpg" className="rounded-full w-[100px]" />
 
                 <span>Email</span>
-                <input defaultValue={email} className="bg-white" />
+                <input defaultValue={email} onChange={(e)=>{
+                    console.log("email is changed")
+                }} className="bg-white" />
 
                 <span>Password</span>
                 <input type="password" defaultValue={password} className="bg-white" />
