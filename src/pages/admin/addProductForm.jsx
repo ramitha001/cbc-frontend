@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
-import { Await } from "react-router-dom";
+import toast from "react-hot-toast";
+
 
 export default function AddProductForm() {
   const [productID, setProductId] = useState("");
@@ -31,11 +32,17 @@ export default function AddProductForm() {
 
     const token = localStorage.getItem("token")
 
-    await axios.post("http://localhost:3000/product",product,{
-        headers : {
-            Authorization : "Bearer" + token
-        }
-    })
+    try{
+        await axios.post("http://localhost:3000/product",product,{
+            headers : {
+                Authorization : "Bearer " + token
+            }
+        })
+        toast.success ("Product Added Successfully.")
+    }catch(err){
+        console.error("Error adding product:", err)
+        toast.error("Failed to add product. Please try again.")
+    }
 
   }
 
