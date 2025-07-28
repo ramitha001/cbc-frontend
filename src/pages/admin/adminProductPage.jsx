@@ -1,22 +1,25 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
+import toast from "react-hot-toast";
 import { FaTrash, FaPen, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function AdminProductPage (){
 
 
-    const [product,setProduct] = useState([
-       
-    ])
+    const [product,setProduct] = useState([]);
+    const [productsLoaded,setProductLoaded] = useState(false);
 
     useEffect(()=>{
+        if(!productsLoaded){
             axios.get("http://localhost:3000/product").then((res)=>{
                 console.log(res.data)
                 setProduct(res.data)
+                setProductLoaded(true)
             })
-    },[]
-)
+        }           
+    },[productsLoaded]
+);
 
     
     return(
@@ -54,7 +57,23 @@ export default function AdminProductPage (){
                                         <td className="px-6 py-4 border-b border-blue-100 max-w-xs truncate" title={product.description}>{product.description}</td>
                                         <td className="px-6 py-4 border-b border-blue-100">
                                             <div className="flex gap-4 justify-center">
-                                                <button className="text-blue-600 hover:text-red-600 transition-colors text-xl" title="Delete"><FaTrash /></button>
+                                                <button className="text-blue-600 hover:text-red-600 transition-colors text-xl" title="Delete" onClick={()=>{
+                                                    alert(product.productID)
+                                                    const token = localStorage.getItem("token");
+                                                    axios.delete(`http://localhost:3000/product/${product.productID}`, {
+                                                        headers: {
+                                                            Authorization: `Bearer ${token}`,
+                                                        },    
+                                                    }).then((res)=> {
+                                                        console.log(res.data)
+                                                        toast.success("Product Sucessfuly Deleted")
+                                                        setProductLoaded(false);
+                                                        
+                                                    }).catch((err) => {
+                                                        console.error("Error deleting product:", err);
+                                                        alert("Failed to delete product.");
+                                                    });
+                                                }}><FaTrash /></button>
                                                 <button className="text-blue-600 hover:text-green-600 transition-colors text-xl" title="Edit"><FaPen /></button>
                                             </div>
                                         </td>
