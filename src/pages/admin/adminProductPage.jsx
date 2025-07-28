@@ -33,7 +33,9 @@ export default function AdminProductPage (){
                     <br />
                     <br />
                     <br />
-                    <div className="overflow-x-auto">
+
+                    {
+                        productsLoaded?<div className="overflow-x-auto">
                         <table className="min-w-full rounded-xl overflow-hidden">
                             <thead>
                                 <tr>
@@ -81,7 +83,16 @@ export default function AdminProductPage (){
                                 ))}
                             </tbody>
                         </table>
+                    </div> :  <div className="w-full h-full flex justify-center items-center">
+                        <div className="w-[60px] h-[60px] border-[4px] border-gray-500 border-b-blue-700 animate-spin rounded-full">
+
+                        </div>
                     </div>
+                    }
+
+                   
+                    <br />
+                    
                 </div>
             </div>
         </div>
