@@ -16,7 +16,7 @@ export default function UoloardMediaToSupabase(file){
         const supabase = createClient(url,key);
 
         const timestamp = new Date().getTime();
-        fileName = timestamp + "." + extension;
+        fileName = timestamp +file.name + "." + extension;
 
         supabase.storage.from("images").upload(fileName,file,{
             cacheControl : "3600",
