@@ -97,7 +97,7 @@ export default function AddProductForm() {
               Image URLs
             </label>
             <input
-              type="text"
+              type="file"
               className="w-full px-4 py-2 rounded-lg border border-amber-200 bg-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-400"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}

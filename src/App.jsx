@@ -28,6 +28,8 @@ function App() {
         <Route path="/signInPage" element={<SignInPage />} />
         <Route path="/admin/*" element={<AdminHomePage />} />
         <Route path="/design" element={<DesignTest />} />
+        <Route path="/testuploard" element={<Testing />} />
+        
         <Route path="/*" element={<HomePage />} />
       </Routes>
      </BrowserRouter>
