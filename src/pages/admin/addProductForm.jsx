@@ -28,11 +28,9 @@ export default function AddProductForm() {
       promisesArray[i] = UoloardMediaToSupabase(imageFiles[i])
     }
 
-    const imgUrls = await Promise.all(promisesArray)
-    console.log(imgUrls)
-    
-    return
-  
+    const imgUrls = await Promise.all(promisesArray);
+    console.log(imgUrls); // This prints the array of image URLs
+
     const product = {
         productID : productID,
         productName : productName,
