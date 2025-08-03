@@ -3,10 +3,14 @@ import { useEffect, useState } from "react"
 import toast from "react-hot-toast";
 import { FaTrash, FaPen, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+
+
 
 export default function AdminProductPage (){
 
-
+    const navigate = useNavigate();
     const [product,setProduct] = useState([]);
     const [productsLoaded,setProductLoaded] = useState(false);
 
@@ -76,7 +80,9 @@ export default function AdminProductPage (){
                                                         alert("Failed to delete product.");
                                                     });
                                                 }}><FaTrash /></button>
-                                                <button className="text-blue-600 hover:text-green-600 transition-colors text-xl" title="Edit"><FaPen /></button>
+                                                <button className="text-blue-600 hover:text-green-600 transition-colors text-xl" title="Edit" onClick={()=>{
+                                                    navigate(`/admin/product/editProduct`)
+                                                }}><FaPen /></button>
                                             </div>
                                         </td>
                                     </tr>
@@ -84,7 +90,7 @@ export default function AdminProductPage (){
                             </tbody>
                         </table>
                     </div> :  <div className="w-full h-full flex justify-center items-center">
-                        <div className="w-[60px] h-[60px] border-[4px] border-gray-500 border-b-blue-700 animate-spin rounded-full">
+                        <div className="w-[60px] h-[60px] border-[4px] border-gray-500 border-b-blue-700 animate-spin rounded-full" >
 
                         </div>
                     </div>
