@@ -16,7 +16,6 @@ export default function DesignTest(){
         }).then(
             (res) =>{
                 
-
                 if(res.data.user == null){
                     toast.error(res.data.message)
                     return

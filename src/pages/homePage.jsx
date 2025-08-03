@@ -3,7 +3,7 @@ import './homePage.css'
 
 export default function HomePage() {
     return (
-        <div className="home-container">
+        <div className="home-container" style={{backgroundColor: 'primary'}}>
             {/* Navigation */}
             <nav className="navbar">
                 <div className="nav-brand">

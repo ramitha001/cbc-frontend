@@ -12,6 +12,7 @@ import HomePage from './pages/homePage.jsx'
 import AdminHomePage from './pages/adminHomePage.jsx'
 import DesignTest from './pages/designtest.jsx'
 import { Toaster } from 'react-hot-toast'
+import TestHomePage from './pages/testHomePage.jsx'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -29,6 +30,7 @@ function App() {
         <Route path="/admin/*" element={<AdminHomePage />} />
         <Route path="/design" element={<DesignTest />} />
         <Route path="/testuploard" element={<Testing />} />
+        <Route path="/testHomePage" element={<TestHomePage />} />
         
         <Route path="/*" element={<HomePage />} />
       </Routes>
