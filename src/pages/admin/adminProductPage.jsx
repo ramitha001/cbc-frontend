@@ -81,7 +81,7 @@ export default function AdminProductPage (){
                                                     });
                                                 }}><FaTrash /></button>
                                                 <button className="text-blue-600 hover:text-green-600 transition-colors text-xl" title="Edit" onClick={()=>{
-                                                    navigate(`/admin/product/editProduct`)
+                                                    navigate(`/admin/product/editProduct`,{state:{product:product}})
                                                 }}><FaPen /></button>
                                             </div>
                                         </td>

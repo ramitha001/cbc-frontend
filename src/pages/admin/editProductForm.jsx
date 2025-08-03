@@ -1,22 +1,36 @@
 import axios from "axios";
 import { useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , useLocation } from "react-router-dom";
 import UoloardMediaToSupabase from "../../utils/mediaUploard";
 
 
 export default function EditProductForm() {
-  const [productID, setProductId] = useState("");
-  const [productName, setProductName] = useState("");
-  const [altNames, setAltNames] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
-  const [imageFiles, setImageFiles] = useState([]);
-  const [price, setPrice] = useState("");
-  const [lastPrice, setLastPrice] = useState("");
-  const [stock, setStock] = useState("");
-  const [description, setDescription] = useState("");
-  const navigate = useNavigate()
+    const navigate = useNavigate()
+    const location = useLocation();
+    const product = location.state?.product;
+  
+    if(!product){
+      navigate("/admin/products")
+      return null;
+    }
 
+
+  const [productID, setProductId] = useState(product.productID);
+  const [productName, setProductName] = useState(product.productName);
+  const [altNames, setAltNames] = useState("");
+  const [imageUrl, setImageUrl] = useState(product.images);
+  const [imageFiles, setImageFiles] = useState([]);
+  const [price, setPrice] = useState(product.price);
+  const [lastPrice, setLastPrice] = useState(product.lastPrice);
+  const [stock, setStock] = useState(product.stock);
+  const [description, setDescription] = useState(product.description);
+
+ 
+
+
+  console.log(location)
+  
   async function handleSubmit(e) {
     e.preventDefault(); // Prevent page reload on form submit
 
@@ -71,6 +85,7 @@ export default function EditProductForm() {
               Product ID
             </label>
             <input
+              disabled
               type="text"
               className="w-full px-4 py-2 rounded-lg border border-amber-200 bg-amber-50 focus:outline-none focus:ring-2 focus:ring-amber-400"
               value={productID}
