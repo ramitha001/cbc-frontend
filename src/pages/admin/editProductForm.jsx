@@ -18,7 +18,7 @@ export default function EditProductForm() {
 
   const [productID, setProductId] = useState(product.productID);
   const [productName, setProductName] = useState(product.productName);
-  const [altNames, setAltNames] = useState("");
+  const [altNames, setAltNames] = useState(product.altNames);
   const [imageUrl, setImageUrl] = useState(product.images);
   const [imageFiles, setImageFiles] = useState([]);
   const [price, setPrice] = useState(product.price);
@@ -37,15 +37,22 @@ export default function EditProductForm() {
     const altName = altNames.split(",")
 
     const promisesArray = []
+    let imgUrls = product.images
 
-    for(let i = 0; i < imageFiles.length; i++){
-      promisesArray[i] = UoloardMediaToSupabase(imageFiles[i])
+    if(imageFiles.length > 0){
+      
+        for(let i = 0; i < imageFiles.length; i++){
+            promisesArray[i] = UoloardMediaToSupabase(imageFiles[i])
+          }
+      
+        imgUrls = await Promise.all(promisesArray);
+        //   console.log(imgUrls); //This prints the array of image URLs
+
     }
 
-    const imgUrls = await Promise.all(promisesArray);
-    console.log(imgUrls); // This prints the array of image URLs
+     
 
-    const product = {
+    const updatedProduct = {
         productID : productID,
         productName : productName,
         altNames : altName,
@@ -59,16 +66,16 @@ export default function EditProductForm() {
     const token = localStorage.getItem("token")
 
     try{
-        await axios.post("http://localhost:3000/product",product,{
+        await axios.put("http://localhost:3000/product/"+productID,updatedProduct,{
             headers : {
                 Authorization : "Bearer " + token
             }
         })
         navigate("/admin/products")
-        toast.success ("Product Added Successfully.")
+        toast.success ("Product Successfully Updated.")
     }catch(err){
-        console.error("Error adding product:", err)
-        toast.error("Failed to add product. Please try again.")
+        console.error("Error Updating product:", err)
+        toast.error("Failed to Update product. Please try again.")
     }
 
   }
@@ -183,8 +190,9 @@ export default function EditProductForm() {
           <button
             type="submit"
             className="w-full py-3 mt-4 bg-amber-400 hover:bg-amber-500 text-white font-bold rounded-lg shadow-lg transition"
+            onClick={handleSubmit}
           >
-            Add Product
+            Update Product
           </button>
         </form>
       </div>
